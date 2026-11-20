@@ -1,0 +1,99 @@
+
+.favorites-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.favorite-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.09);
+    transition: transform 0.3s ease;
+}
+
+.favorite-card:hover {
+    transform: translateY(-7px);
+}
+
+.favorite-image {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+}
+
+.favorite-content {
+    padding: 20px;
+}
+
+.favorite-content h3 {
+    color: #30206b;
+    margin-bottom: 10px;
+}
+
+.favorite-content p {
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 18px;
+}
+
+.favorite-content button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.watch-button {
+    background: #7655df;
+    color: white;
+}
+
+.watch-button:hover {
+    background: #5635bf;
+}
+
+.remove-button {
+    background: #ffe5e9;
+    color: #e63950;
+}
+
+.remove-button:hover {
+    background: #ffcbd3;
+}
+
+.empty-message {
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+    margin-top: 50px;
+}
+
+.empty-message a {
+    color: #7655df;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.empty-message a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 850px) {
+    .favorites-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 550px) {
+    .favorites-container {
+        grid-template-columns: 1fr;
+    }
+}

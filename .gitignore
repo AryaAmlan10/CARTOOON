@@ -221,3 +221,21 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+.env
+# CartoonWorld environment files
+**/.env
+**/.env.*
+
+# Python virtual environments
+**/.venv/
+**/venv/
+
+# SQLite database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Python cache
+**/__pycache__/
+*.pyc
+backend/.env

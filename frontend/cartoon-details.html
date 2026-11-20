@@ -1,0 +1,250 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CartoonWorld - Cartoon Details</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="cartoon-details.css">
+
+    <style>
+        .details-container {
+            max-width: 1200px;
+            width: 92%;
+            margin: 35px auto;
+        }
+
+        .details-card {
+            display: flex;
+            align-items: center;
+            gap: 35px;
+            padding: 30px;
+            background: white;
+            border-radius: 18px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            margin-bottom: 40px;
+        }
+
+        .details-poster {
+            flex: 0 0 320px;
+            height: 320px;
+            overflow: hidden;
+            border-radius: 15px;
+            background: #f1f1f1;
+        }
+
+        .details-poster img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .details-content {
+            flex: 1;
+        }
+
+        .details-content h2 {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .details-content p {
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .details-information {
+            margin: 20px 0;
+        }
+
+        .recommendations-section {
+            margin-top: 45px;
+        }
+
+        .recommendations-section > h2 {
+            font-size: 27px;
+            margin-bottom: 10px;
+        }
+
+        .recommendations-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .video-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.09);
+            transition: transform 0.25s ease;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .video-card img {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            display: block;
+        }
+
+        .video-card-content {
+            padding: 16px;
+        }
+
+        .video-card-content h3 {
+            font-size: 17px;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .video-card-content p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 14px;
+        }
+
+        .video-card button,
+        .video-card a {
+            display: inline-block;
+            padding: 10px 15px;
+            margin: 4px 5px 4px 0;
+            border: none;
+            border-radius: 7px;
+            background: #2878d0;
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .video-card a {
+            background: #e53935;
+        }
+
+        .video-player {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: #111;
+        }
+
+        .video-player iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        @media (max-width: 700px) {
+            .details-card {
+                flex-direction: column;
+                align-items: stretch;
+                padding: 20px;
+            }
+
+            .details-poster {
+                flex-basis: auto;
+                width: 100%;
+                height: 280px;
+            }
+
+            .details-content h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="dashboard-header">
+        <h1>🎬 CartoonWorld</h1>
+
+        <nav>
+            <a href="child-dashboard.html">Dashboard</a>
+            <a href="cartoons.html">Cartoons</a>
+            <button id="logoutButton" type="button">Logout</button>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="details-container">
+
+        <!-- CARTOON INFORMATION -->
+        <section class="details-card">
+
+            <div class="details-poster" id="cartoonPoster">
+                🎬
+            </div>
+
+            <div class="details-content">
+
+                <h2 id="cartoonName">Loading Cartoon...</h2>
+
+                <p id="cartoonDescription">
+                    Cartoon description will appear here.
+                </p>
+
+                <div class="details-information">
+
+                    <p>
+                        <strong>Genre:</strong>
+                        <span id="cartoonGenre">Not available</span>
+                    </p>
+
+                    <p>
+                        <strong>Main Characters:</strong>
+                        <span id="cartoonCharacters">Not available</span>
+                    </p>
+
+                    <p>
+                        <strong>Release Information:</strong>
+                        <span id="cartoonRelease">Not available</span>
+                    </p>
+
+                </div>
+
+                <button
+                    type="button"
+                    onclick="window.location.href='cartoons.html'">
+                    ← Back to Cartoons
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- YOUTUBE RECOMMENDATIONS -->
+        <section class="recommendations-section">
+
+            <h2>🎬 Recommended YouTube Videos</h2>
+
+            <p>Watch your favourite cartoon videos!</p>
+
+            <div
+                class="recommendations-container"
+                id="recommendationsContainer">
+
+                <p>Loading recommendations...</p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- JAVASCRIPT FILES -->
+    <script src="dashboard.js"></script>
+    <script src="cartoon-details.js"></script>
+
+</body>
+</html>

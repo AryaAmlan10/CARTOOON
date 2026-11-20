@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Favorites</title>
+</head>
+<body>
+    <h2>Test CartoonWorld Favorites</h2>
+
+    <button id="saveButton">Save Doraemon</button>
+
+    <p id="result"></p>
+
+    <script>
+        document.getElementById("saveButton").addEventListener("click", async function () {
+            try {
+                const response = await fetch("http://127.0.0.1:5000/api/favorites", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        userId: 1,
+                        cartoonId: "doraemon"
+                    })
+                });
+
+                const data = await response.json();
+
+                document.getElementById("result").textContent =
+                    JSON.stringify(data);
+
+            } catch (error) {
+                document.getElementById("result").textContent =
+                    "Error: " + error.message;
+            }
+        });
+    </script>
+</body>
+</html>

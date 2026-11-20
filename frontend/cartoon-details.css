@@ -1,0 +1,312 @@
+
+/* =====================================
+   CARTOON DETAILS PAGE
+===================================== */
+
+.details-container {
+    max-width: 1200px;
+    width: 92%;
+    margin: 40px auto;
+    padding: 15px;
+}
+
+/* =====================================
+   CARTOON DETAILS CARD
+===================================== */
+
+.details-card {
+    background: white;
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 35px;
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+    align-items: center;
+}
+
+/* =====================================
+   CARTOON POSTER
+===================================== */
+
+.details-poster {
+    width: 100%;
+    height: 350px;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #f1edff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.details-poster img,
+.cartoon-poster-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.details-poster:hover img {
+    transform: scale(1.04);
+}
+
+/* =====================================
+   CARTOON INFORMATION
+===================================== */
+
+.details-content {
+    padding: 15px 0;
+}
+
+.details-content h2 {
+    color: #7655E8;
+    font-size: 32px;
+    margin-bottom: 18px;
+}
+
+.details-content > p {
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.details-information {
+    background: #F7F5FF;
+    padding: 22px;
+    border-radius: 14px;
+    margin-bottom: 25px;
+}
+
+.details-information p {
+    margin-bottom: 15px;
+    color: #444;
+    line-height: 1.7;
+}
+
+.details-information p:last-child {
+    margin-bottom: 0;
+}
+
+/* =====================================
+   BACK BUTTON
+===================================== */
+
+.details-content button {
+    background: linear-gradient(135deg, #7655E8, #9679F5);
+    color: white;
+    border: none;
+    padding: 13px 25px;
+    border-radius: 9px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.details-content button:hover {
+    background: #6241D0;
+    transform: translateY(-2px);
+}
+
+/* =====================================
+   YOUTUBE VIDEO SECTION
+===================================== */
+
+.recommendations-section {
+    margin-top: 45px;
+    padding: 25px 0;
+}
+
+.recommendations-section h2 {
+    color: #7655E8;
+    font-size: 29px;
+    margin-bottom: 12px;
+}
+
+.recommendations-section > p {
+    color: #666;
+    margin-bottom: 25px;
+    font-size: 16px;
+}
+
+/* =====================================
+   VIDEO GRID
+===================================== */
+
+.recommendations-container {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(280px, 1fr)
+    );
+    gap: 25px;
+}
+
+/* =====================================
+   VIDEO CARD
+===================================== */
+
+.video-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.video-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 28px rgba(118, 85, 232, 0.16);
+}
+
+/* =====================================
+   VIDEO PLAYER
+===================================== */
+
+.video-player {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    position: relative;
+    background: #111;
+    overflow: hidden;
+}
+
+.video-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* IFRAME PLAYER */
+
+.video-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+/* =====================================
+   PLAY VIDEO BUTTON
+===================================== */
+
+.play-video-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(118, 85, 232, 0.95);
+    color: white;
+    border: none;
+    padding: 13px 23px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    transition: 0.3s ease;
+    white-space: nowrap;
+}
+
+.play-video-button:hover {
+    background: #6241D0;
+    transform: translate(-50%, -50%) scale(1.06);
+}
+
+/* =====================================
+   VIDEO CARD CONTENT
+===================================== */
+
+.video-card-content {
+    padding: 18px;
+}
+
+.video-card-content h3 {
+    color: #333;
+    font-size: 17px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.video-channel {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+/* =====================================
+   WATCH ON YOUTUBE BUTTON
+===================================== */
+
+.video-card-content a {
+    display: inline-block;
+    background: #e53935;
+    color: white;
+    padding: 10px 17px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.video-card-content a:hover {
+    background: #c62828;
+    transform: translateY(-2px);
+}
+
+/* =====================================
+   MOBILE RESPONSIVE
+===================================== */
+
+@media (max-width: 768px) {
+
+    .details-container {
+        width: 95%;
+        padding: 8px;
+    }
+
+    .details-card {
+        grid-template-columns: 1fr;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .details-poster {
+        height: 280px;
+    }
+
+    .details-content h2 {
+        font-size: 26px;
+    }
+
+    .recommendations-section {
+        padding: 10px 0;
+    }
+
+    .recommendations-section h2 {
+        font-size: 24px;
+    }
+
+    .recommendations-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    .details-card {
+        grid-template-columns: 280px 1fr;
+        gap: 25px;
+    }
+
+    .details-poster {
+        height: 300px;
+    }
+}

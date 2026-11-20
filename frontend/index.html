@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CartoonWorld - Login</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <div class="login-left">
+
+            <h1>🎬 CartoonWorld</h1>
+
+            <h2>Welcome to Your<br>Magical Cartoon World!</h2>
+
+            <p>
+                Discover amazing cartoons, enjoy exciting episodes,
+                answer fun quizzes and collect stars!
+            </p>
+
+            <div class="cartoon-icon">🌈 ⭐ 🎨 🚀</div>
+
+        </div>
+
+        <div class="login-right">
+
+            <h2>Welcome Back!</h2>
+
+            <p class="subtitle">
+                Login to continue your adventure.
+            </p>
+
+            <form id="loginForm">
+
+                <label for="username">Email</label>
+
+                <input
+                    type="email"
+                    id="username"
+                    placeholder="Enter your email"
+                    required
+                >
+
+                <label for="password">Password</label>
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter your password"
+                    required
+                >
+
+                <button type="submit">Login</button>
+
+            </form>
+
+            <!-- FORGOT PASSWORD -->
+            <p class="register-text">
+                <a href="forgot-password.html">Forgot Password?</a>
+            </p>
+
+            <!-- REGISTRATION -->
+            <p class="register-text">
+                New to CartoonWorld?
+                <a href="register.html">Create Account</a>
+            </p>
+
+            <!-- PARENT LOGIN -->
+            <p class="parent-login">
+                <a href="#" id="parentLink">
+                    Parent / Guardian Login
+                </a>
+            </p>
+
+            <p id="loginMessage"></p>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

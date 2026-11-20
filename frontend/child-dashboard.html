@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CartoonWorld - Child Dashboard</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="dashboard-header">
+
+        <h1>🎬 CartoonWorld</h1>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="cartoons.html">Cartoons</a>
+            <a href="#learning">Learning</a>
+
+            <button id="logoutButton" type="button">
+                Logout
+            </button>
+        </nav>
+
+    </header>
+
+    <!-- MAIN DASHBOARD -->
+    <main class="dashboard-container" id="home">
+
+        <!-- WELCOME SECTION -->
+        <section class="welcome-section">
+
+            <h2 id="welcomeTitle">
+                Welcome to CartoonWorld! 🌈
+            </h2>
+
+            <p>
+                Explore cartoons, learn new things and have fun!
+            </p>
+
+        </section>
+
+        <!-- DASHBOARD CARDS -->
+        <section class="dashboard-cards">
+
+            <!-- EXPLORE CARTOONS -->
+            <div class="dashboard-card" id="cartoons">
+
+                <div class="card-icon">🎥</div>
+
+                <h3>Explore Cartoons</h3>
+
+                <p>
+                    Discover your favourite cartoon shows.
+                </p>
+
+                <button type="button"
+                    onclick="window.location.href='cartoons.html'">
+                    Explore Now
+                </button>
+
+            </div>
+
+            <!-- LEARNING ZONE -->
+            <div class="dashboard-card" id="learning">
+
+                <div class="card-icon">📚</div>
+
+                <h3>Learning Zone</h3>
+
+                <p>
+                    Learn interesting things through fun activities.
+                </p>
+
+                <button type="button">
+                    Start Learning
+                </button>
+
+            </div>
+
+            <!-- FAVOURITES -->
+            <div class="dashboard-card">
+
+                <div class="card-icon">⭐</div>
+
+                <h3>My Favourites</h3>
+
+                <p>
+                    Find the cartoons you love the most.
+                </p>
+
+                <button type="button">
+                    View Favourites
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- JAVASCRIPT -->
+    <script src="dashboard.js"></script>
+
+</body>
+</html>

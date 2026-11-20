@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CartoonWorld - Register</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <div class="login-left">
+            <h1>🎬 CartoonWorld</h1>
+
+            <h2>Start Your Cartoon Adventure!</h2>
+
+            <p>
+                Create your account and explore exciting cartoons,
+                quizzes and rewards.
+            </p>
+
+            <div class="cartoon-icon">🌈 ⭐ 🎨 🚀</div>
+        </div>
+
+        <div class="login-right">
+
+            <h2>Create Account</h2>
+
+            <p class="subtitle">
+                Join the CartoonWorld family!
+            </p>
+
+            <form id="registerForm" novalidate>
+
+                <label for="name">Full Name</label>
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter your name"
+                    required
+                >
+
+                <label for="email">Email</label>
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+                <label for="password">Password</label>
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Create a password"
+                    required
+                >
+
+                <label for="role">Account Type</label>
+
+                <select id="role" required>
+                    <option value="">Select account type</option>
+                    <option value="child">Child</option>
+                    <option value="parent">Parent / Guardian</option>
+                </select>
+
+                <button type="submit" id="registerButton">
+                    Create Account
+                </button>
+
+            </form>
+
+            <p id="registerMessage" role="status" aria-live="polite"></p>
+
+            <p class="register-text">
+                Already registered?
+                <a href="index.html">Login</a>
+            </p>
+
+        </div>
+
+    </div>
+
+    <script src="register.js"></script>
+
+</body>
+</html>

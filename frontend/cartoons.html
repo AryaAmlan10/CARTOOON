@@ -1,0 +1,444 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CartoonWorld - Explore Cartoons</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+
+    <style>
+        .cartoon-search {
+            max-width: 500px;
+            margin: 25px auto 35px;
+        }
+
+        .cartoon-search input {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid #d9d0ff;
+            border-radius: 25px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .cartoon-search input:focus {
+            border-color: #7655df;
+        }
+
+        .dashboard-cards {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 25px;
+        }
+
+        .dashboard-card {
+            overflow: hidden;
+            padding: 0;
+            border-radius: 16px;
+            background: white;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.09);
+            transition: transform 0.3s ease;
+        }
+
+        .dashboard-card:hover {
+            transform: translateY(-7px);
+        }
+
+        .cartoon-image {
+            width: 100%;
+            height: 430px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .cartoon-card-content {
+            padding: 20px;
+        }
+
+        .cartoon-card-content h3 {
+            color: #30206b;
+            margin-bottom: 10px;
+        }
+
+        .cartoon-card-content p {
+            color: #666;
+            margin-bottom: 18px;
+            line-height: 1.5;
+        }
+
+        .cartoon-card-content button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 8px;
+        }
+
+        .watch-button {
+            background: #7655df;
+            color: white;
+        }
+
+        .watch-button:hover {
+            background: #5635bf;
+        }
+
+        .favorite-button {
+            background: #fff0f2;
+            color: #e63950;
+            border: 1px solid #ffc4cc !important;
+        }
+
+        .favorite-button:hover {
+            background: #ffe0e5;
+        }
+
+        .favorite-button.saved {
+            background: #e63950;
+            color: white;
+        }
+
+        .favorite-message {
+            text-align: center;
+            margin-top: 8px;
+            font-size: 13px;
+            min-height: 18px;
+        }
+
+        @media (max-width: 850px) {
+            .dashboard-cards {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 550px) {
+            .dashboard-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header class="dashboard-header">
+
+        <h1>🎬 CartoonWorld</h1>
+
+        <nav>
+            <a href="child-dashboard.html">Dashboard</a>
+            <a href="cartoons.html">Cartoons</a>
+            <a href="favorites.html">❤️ My Favorites</a>
+            <button id="logoutButton" type="button">Logout</button>
+        </nav>
+
+    </header>
+
+    <main class="dashboard-container">
+
+        <section class="welcome-section">
+            <h2>Explore Your Favourite Cartoons! 🎉</h2>
+            <p>Discover amazing cartoon shows and enjoy watching!</p>
+        </section>
+
+        <div class="cartoon-search">
+            <input
+                type="text"
+                id="cartoonSearch"
+                placeholder="🔍 Search your favourite cartoon..."
+            >
+        </div>
+
+        <section class="dashboard-cards" id="cartoonCards">
+
+            <!-- TOM AND JERRY -->
+            <div class="dashboard-card" data-name="tom and jerry">
+                <img src="images/tom.jpg" alt="Tom and Jerry" class="cartoon-image">
+
+                <div class="cartoon-card-content">
+                    <h3>Tom and Jerry</h3>
+                    <p>A funny adventure between a cat and a mouse.</p>
+
+                    <button class="watch-button" onclick="openCartoon('tom')">
+                        Watch Now ▶
+                    </button>
+
+                    <button class="favorite-button" data-cartoon="tom">
+                        🤍 Add to Favorites
+                    </button>
+
+                    <div class="favorite-message"></div>
+                </div>
+            </div>
+
+            <!-- DORAEMON -->
+            <div class="dashboard-card" data-name="doraemon">
+                <img src="images/doraemon.jpg" alt="Doraemon" class="cartoon-image">
+
+                <div class="cartoon-card-content">
+                    <h3>Doraemon</h3>
+                    <p>Explore exciting adventures with a robotic cat.</p>
+
+                    <button class="watch-button" onclick="openCartoon('doraemon')">
+                        Watch Now ▶
+                    </button>
+
+                    <button class="favorite-button" data-cartoon="doraemon">
+                        🤍 Add to Favorites
+                    </button>
+
+                    <div class="favorite-message"></div>
+                </div>
+            </div>
+
+            <!-- SHINCHAN -->
+            <div class="dashboard-card" data-name="shinchan">
+                <img src="images/shinchan.jpg" alt="Shinchan" class="cartoon-image">
+
+                <div class="cartoon-card-content">
+                    <h3>Shinchan</h3>
+                    <p>Enjoy funny moments and everyday adventures.</p>
+
+                    <button class="watch-button" onclick="openCartoon('shinchan')">
+                        Watch Now ▶
+                    </button>
+
+                    <button class="favorite-button" data-cartoon="shinchan">
+                        🤍 Add to Favorites
+                    </button>
+
+                    <div class="favorite-message"></div>
+                </div>
+            </div>
+
+            <!-- KUNG FU PANDA -->
+            <div class="dashboard-card" data-name="kung fu panda">
+                <img src="images/kungfu-panda.jpg" alt="Kung Fu Panda" class="cartoon-image">
+
+                <div class="cartoon-card-content">
+                    <h3>Kung Fu Panda</h3>
+                    <p>Discover an adventure about courage and friendship.</p>
+
+                    <button class="watch-button" onclick="openCartoon('kungfu')">
+                        Watch Now ▶
+                    </button>
+
+                    <button class="favorite-button" data-cartoon="kungfu">
+                        🤍 Add to Favorites
+                    </button>
+
+                    <div class="favorite-message"></div>
+                </div>
+            </div>
+
+            <!-- SPONGEBOB -->
+            <div class="dashboard-card" data-name="spongebob squarepants">
+                <img src="images/spongebob.jpg" alt="SpongeBob SquarePants" class="cartoon-image">
+
+                <div class="cartoon-card-content">
+                    <h3>SpongeBob SquarePants</h3>
+                    <p>Enjoy underwater adventures with SpongeBob.</p>
+
+                    <button class="watch-button" onclick="openCartoon('spongebob')">
+                        Watch Now ▶
+                    </button>
+
+                    <button class="favorite-button" data-cartoon="spongebob">
+                        🤍 Add to Favorites
+                    </button>
+
+                    <div class="favorite-message"></div>
+                </div>
+            </div>
+
+            <!-- DRAGON BALL -->
+            <div class="dashboard-card" data-name="dragon ball">
+                <img src="images/dragonball.jpg" alt="Dragon Ball" class="cartoon-image">
+
+                <div class="cartoon-card-content">
+                    <h3>Dragon Ball</h3>
+                    <p>Explore exciting adventures and powerful heroes.</p>
+
+                    <button class="watch-button" onclick="openCartoon('dragonball')">
+                        Watch Now ▶
+                    </button>
+
+                    <button class="favorite-button" data-cartoon="dragonball">
+                        🤍 Add to Favorites
+                    </button>
+
+                    <div class="favorite-message"></div>
+                </div>
+            </div>
+
+        </section>
+
+        <p id="noResults" style="display:none; text-align:center; margin:25px;">
+            No cartoons found.
+        </p>
+
+    </main>
+
+    <script src="dashboard.js"></script>
+
+    <script>
+
+        // OPEN CARTOON DETAILS
+        function openCartoon(cartoonId) {
+            window.location.href = "cartoon-details.html?id=" + cartoonId;
+        }
+
+        // SEARCH CARTOONS
+        const searchInput = document.getElementById("cartoonSearch");
+        const cartoonCards = document.querySelectorAll(".dashboard-card");
+        const noResults = document.getElementById("noResults");
+
+        searchInput.addEventListener("input", function () {
+
+            const searchValue = searchInput.value.toLowerCase().trim();
+            let visibleCount = 0;
+
+            cartoonCards.forEach(function (card) {
+
+                const cartoonName = card.dataset.name;
+
+                if (cartoonName.includes(searchValue)) {
+                    card.style.display = "";
+                    visibleCount++;
+                } else {
+                    card.style.display = "none";
+                }
+
+            });
+
+            noResults.style.display = visibleCount === 0 ? "block" : "none";
+
+        });
+
+        // GET LOGGED-IN USER ID
+        const userId = sessionStorage.getItem("userId");
+
+        // LOAD EXISTING FAVORITES
+        async function loadFavorites() {
+
+            if (!userId) {
+                alert("Please login first.");
+                window.location.href = "index.html";
+                return;
+            }
+
+            try {
+
+                const response = await fetch(
+                    `http://127.0.0.1:5000/api/favorites/${userId}`
+                );
+
+                const data = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(data.message || "Could not load favorites.");
+                }
+
+                document.querySelectorAll(".favorite-button").forEach(function (button) {
+
+                    const cartoonId = button.dataset.cartoon;
+                    const message = button.nextElementSibling;
+
+                    if (data.favorites.includes(cartoonId)) {
+
+                        button.classList.add("saved");
+                        button.innerText = "❤️ Added to Favorites";
+                        message.innerText = "Already saved";
+
+                    }
+
+                });
+
+            } catch (error) {
+                console.error("Favorites loading error:", error);
+            }
+
+        }
+
+        // ADD CARTOON TO FAVORITES
+        document.querySelectorAll(".favorite-button").forEach(function (button) {
+
+            button.addEventListener("click", async function () {
+
+                const cartoonId = button.dataset.cartoon;
+                const message = button.nextElementSibling;
+
+                if (!userId) {
+                    alert("Please login to save favorites.");
+                    window.location.href = "index.html";
+                    return;
+                }
+
+                if (button.classList.contains("saved")) {
+                    message.innerText = "This cartoon is already saved!";
+                    return;
+                }
+
+                button.disabled = true;
+                message.innerText = "Saving...";
+
+                try {
+
+                    const response = await fetch(
+                        "http://127.0.0.1:5000/api/favorites",
+                        {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json"
+                            },
+                            body: JSON.stringify({
+                                userId: Number(userId),
+                                cartoonId: cartoonId
+                            })
+                        }
+                    );
+
+                    const data = await response.json();
+
+                    if (response.ok || data.message === "Cartoon is already in your favorites") {
+
+                        button.classList.add("saved");
+                        button.innerText = "❤️ Added to Favorites";
+                        message.innerText = data.message;
+
+                    } else {
+
+                        message.innerText = data.message || "Could not save favorite.";
+
+                    }
+
+                } catch (error) {
+
+                    console.error("Favorite error:", error);
+                    message.innerText = "Could not connect to the backend.";
+
+                } finally {
+
+                    button.disabled = false;
+
+                }
+
+            });
+
+        });
+
+        // LOAD FAVORITES WHEN PAGE OPENS
+        loadFavorites();
+
+    </script>
+
+</body>
+</html>
